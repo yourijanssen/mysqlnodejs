@@ -1,0 +1,25 @@
+{
+  "name": "mysqlnodejs",
+  "version": "1.0.0",
+  "description": "Sample app for using mysql with node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourijanssen/mysqlnodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yourijanssen/mysqlnodejs/issues"
+  },
+  "homepage": "https://github.com/yourijanssen/mysqlnodejs#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.20"
+  }
+}
