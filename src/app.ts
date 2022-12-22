@@ -3,7 +3,7 @@ import {connection} from './database.js';
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('/', (req: any, res: { send: (arg0: string) => void; }) => {
     res.send('Hello World');
 });
 
