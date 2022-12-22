@@ -1,21 +1,22 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const database_js_1 = require("./database.js");
-const app = (0, express_1.default)();
-app.get('/', (req, res) => {
-    res.send('Hello World');
+const express = require('express');
+const mysql = require('mysql');
+const app = express();
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'kees123',
+    database: 'test_db',
+    port: 3306
 });
-app.listen('3000', () => {
-    console.log('Server started on port 3000');
-    database_js_1.connection.connect((err) => {
-        if (err) {
-            console.log('Error connecting to Db');
-            return;
-        }
-        console.log('Connection established');
-    });
+connection.connect((err) => {
+    if (err) {
+        throw err;
+    }
+    else {
+        console.log('Connected!');
+    }
 });
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}...`));
+console.log("App is running on port" + port);
