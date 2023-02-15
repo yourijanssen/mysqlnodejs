@@ -1,22 +1,9 @@
 "use strict";
-const express = require('express');
-const mysql = require('mysql');
-const app = express();
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'kees123',
-    database: 'test_db',
-    port: 3306
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const http_1 = __importDefault(require("http"));
+const server = http_1.default.createServer((req, res) => {
+    console.log(req);
 });
-connection.connect((err) => {
-    if (err) {
-        throw err;
-    }
-    else {
-        console.log('Connected!');
-    }
-});
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
-console.log("App is running on port" + port);

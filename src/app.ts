@@ -1,24 +1,6 @@
-const express = require('express');
-const mysql = require('mysql');
-const app = express();
+import http from 'http';
+import fs from 'fs';
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'kees123',
-    database: 'test_db',
-    port: 3306
+const server = http.createServer((req, res) => {
+    console.log(req);
 });
-
-connection.connect((err: any) => {
-    if (err) {
-        throw err 
-    }    else {console.log('Connected!');}
-});
-
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
-
-console.log("App is running on port" + port); 
-
